@@ -1,0 +1,22 @@
+session_data:
+  transaction_id: null
+  message_id: null
+  city_code: null
+  bap_id: null
+  bap_uri: null
+  bpp_id: null
+  bpp_uri: null
+  start_code: null
+  end_code: null
+  buyer_app_fee: null
+  vehicle_type: null
+  fulfillments: []
+  category_ids: []
+  provider_id: null
+  fullfillment_ids: []
+  item_ids: []
+  items: []
+  selected_item_ids: []
+  billing: {}
+  payments: []
+  order_id: null
