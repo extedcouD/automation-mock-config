@@ -1,0 +1,29 @@
+codes:
+  - code: 100
+    action_id: "search1"
+  - code: 101
+    action_id: "search2"
+  - code: 102
+    action_id: "on_search1"
+  - code: 103
+    action_id: "on_search2"
+  - code: 104
+    action_id: "select"
+  - code: 105
+    action_id: "on_select"
+  - code: 106
+    action_id: "init"
+  - code: 107
+    action_id: "on_init"
+  - code: 108
+    action_id: "confirm"
+  - code: 109
+    action_id: "on_confirm"
+  - code: 110
+    action_id: "status"
+  - code: 111
+    action_id: "on_status"
+  - code: 112
+    action_id: "update"
+  - code: 113
+    action_id: "on_update"
