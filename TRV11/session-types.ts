@@ -1,4 +1,4 @@
-interface SessionData {
+export interface SessionData {
 	transaction_id: string | null;
 	message_id: string | null;
 	last_action: string | null;
@@ -23,3 +23,25 @@ interface SessionData {
 	payments: any[]; // Replace `any` with a specific type if known
 	order_id: string | null;
 }
+
+export type BecknContext = {
+	action: string;
+	bap_id: string;
+	bap_uri: string;
+	bpp_id?: string;
+	bpp_uri?: string;
+	domain: string;
+	location: {
+		city: {
+			code: string;
+		};
+		country: {
+			code: string;
+		};
+	};
+	message_id: string;
+	timestamp: string;
+	transaction_id: string;
+	ttl: string;
+	version: string;
+};
