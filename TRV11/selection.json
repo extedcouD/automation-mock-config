@@ -1,85 +1,56 @@
 {
 	"_TESTS_": {
-		"search": [
+		"valid_code": [
 			{
-				"_NAME_": "First_search_request",
+				"_NAME_": "first_search_request",
 				"fulfillments": "$._EXTERNAL.fulfillments[*].id",
-				"_RETURN_": "!(fulfillments are present)",
-                "_SUCCESS_CODE_": 100
+				"mockType": "$._EXTERNAL.mock_type",
+				"forType": ["BAP"],
+				"_RETURN_": "!(fulfillments are present) && (mockType equal to forType)",
+				"_SUCCESS_CODE_": 100
 			},
-            {
-				"_NAME_": "Second_search_request",
-				"fulfillments": "$._EXTERNAL.fulfillments[*].id",
-				"_RETURN_": "fulfillments are present",
-                "_SUCCESS_CODE_": 101
-			}
-		],
-        "on_search": [
 			{
-				"_NAME_": "First_on_search_request",
-				"items": "$._EXTERNAL.items[*].id",
-				"_RETURN_": "!(items are present)",
-                "_SUCCESS_CODE_": 102
+				"_NAME_": "second_search_request",
+				"lastAction": "$._EXTERNAL.last_action",
+				"mockType": "$._EXTERNAL.mock_type",
+				"forType": ["BAP"],
+				"action": ["on_search"],
+				"_RETURN_": "(action equal to lastAction) && (mockType equal to forType)",
+				"_SUCCESS_CODE_": 101
 			},
-            {
-				"_NAME_": "Second_on_search_request",
-				"items": "$._EXTERNAL.items[*].id",
-				"_RETURN_": "!(items are present)",
-                "_SUCCESS_CODE_": 103
-			}
-		],
-        "select": [
 			{
 				"_NAME_": "select_request",
-                "transaction_id": "$._EXTERNAL.transaction_id",
-				"_RETURN_": "transaction_id are present",
-                "_SUCCESS_CODE_": 104
-			}
-		],
-        "on_select": [
-			{
-				"_NAME_": "on_select_request",
-                "transaction_id": "$._EXTERNAL.transaction_id",
-				"_RETURN_": "transaction_id are present",
-                "_SUCCESS_CODE_": 105
-			}
-		], 
-        "init": [
+				"lastAction": "$._EXTERNAL.last_action",
+				"action": ["on_search", "select", "on_select"],
+				"mockType": "$._EXTERNAL.mock_type",
+				"forType": ["BAP"],
+				"items": "$._EXTERNAL.item_ids[*]",
+				"_RETURN_": "(lastAction all in action) && (mockType equal to forType) && (items are present)",
+				"_SUCCESS_CODE_": 104
+			},
 			{
 				"_NAME_": "init_request",
-                "transaction_id": "$._EXTERNAL.transaction_id",
-				"_RETURN_": "transaction_id are present",
-                "_SUCCESS_CODE_": 106
-			}
-		],
-        "on_init": [
-			{
-				"_NAME_": "on_init_request",
-                "transaction_id": "$._EXTERNAL.transaction_id",
-				"_RETURN_": "transaction_id are present",
-                "_SUCCESS_CODE_": 107
-			}
-		],
-        "confirm": [
+				"lastAction": "$._EXTERNAL.last_action",
+				"action": ["on_search", "on_select"],
+				"mockType": "$._EXTERNAL.mock_type",
+				"forType": ["BAP"],
+				"items": "$._EXTERNAL.item_ids[*]",
+				"_RETURN_": "(lastAction all in action) && (mockType equal to forType) && (items are present)",
+				"_SUCCESS_CODE_": 106
+			},
 			{
 				"_NAME_": "confirm_request",
-                "transaction_id": "$._EXTERNAL.transaction_id",
-				"_RETURN_": "transaction_id are present",
-                "_SUCCESS_CODE_": 108
-			}
-		],
-        "on_confirm": [
-			{
-				"_NAME_": "on_confirm_request",
-                "transaction_id": "$._EXTERNAL.transaction_id",
-				"_RETURN_": "transaction_id are present",
-                "_SUCCESS_CODE_": 109
+				"lastAction": "$._EXTERNAL.last_action",
+				"action": ["on_init"],
+				"mockType": "$._EXTERNAL.mock_type",
+				"forType": ["BAP"],
+				"selected_ids": "$._EXTERNAL.selected_item_ids[*]",
+				"_RETURN_": "(lastAction all in action) && (mockType equal to forType) && (selected_ids are present)",
+				"_SUCCESS_CODE_": 108
 			}
 		]
 	},
 	"_SESSION_DATA_": {
-		"search": {
-
-		}
+		"search": {}
 	}
 }
