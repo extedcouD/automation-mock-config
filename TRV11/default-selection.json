@@ -1,0 +1,12 @@
+{
+	"_TESTS_": {
+		"search": [
+			{
+				"_NAME_": "first_on_search",
+				"stops": "$."
+			},
+			{}
+		]
+	},
+	"_SESSION_DATA_": {}
+}
