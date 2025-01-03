@@ -19,7 +19,6 @@ export async function Generator(action_id: string,existingPayload: any, sessionD
             return await confirmGenerator(existingPayload,sessionData)
         default:
             throw new Error(`Invalid request type ${action_id}`);
-                
     }
 
 }

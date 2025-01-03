@@ -1,0 +1,12 @@
+save-data:
+  vehicle_category: "$.message.intent.fulfillment.vehicle.category"
+  category_ids: "$.message.catalog.providers[*].categories[*].id"
+  categories: "$.message.catalog.providers[*].categories"
+  ticket_category_id: "$.message.catalog.providers[*].categories[?(@.descriptor.name=='Ticket')].id"
+  provider_id: "$.message.catalog.providers[*].id"
+  fulfillment_ids: "$.message.catalog.providers[*].fulfillments[*].id"
+  item_ids: "$.message.catalog.providers[*].items[*].id"
+  items: "$.message.catalog.providers[*].items[*]"
+  fulfillments: "$.message.catalog.providers[*].fulfillments[*]"
+  bpp_id: "$.context.bpp_id"
+  bpp_uri: "$.context.bpp_uri"

@@ -1,0 +1,5 @@
+save-data:
+  bpp_id: "$.context.bpp_id"
+  bpp_uri: "$.context.bpp_uri"
+  fulfillments: "$.message.catalog.providers[*].fulfillments[*]"
+  cityCode: "$.context.location.city.code"
