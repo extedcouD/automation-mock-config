@@ -3,9 +3,70 @@
 		"search": [
 			{
 				"_NAME_": "first_on_search",
-				"stops": "$."
+				"stops": "$.payload.message.intent.fulfillment.stops",
+				"_RETURN_": "!(stops are present)",
+				"_SUCCESS_CODE_": 102
 			},
-			{}
+			{
+				"_NAME_": "second_on_search",
+				"stops": "$.payload.message.intent.fulfillment.stops",
+				"_RETURN_": "stops are present",
+				"_SUCCESS_CODE_": 103
+			}
+		],
+		"on_search": [
+			{
+				"_NAME_": "second_search",
+				"items": "$.payload.message.catalog.providers[*].items[*].id",
+				"_RETURN_": "!(items are present)",
+				"_SUCCESS_CODE_": 101
+			},
+			{
+				"_NAME_": "select",
+				"items": "$.payload.message.catalog.providers[*].items[*].id",
+				"_RETURN_": "items are present",
+				"_SUCCESS_CODE_": 104
+			}
+		],
+		"select": [
+			{
+				"_NAME_": "on_select",
+				"txn_id": "$.payload.context.transaction_id",
+				"_RETURN_": "txn_id are present",
+				"_SUCCESS_CODE_": 105
+			}
+		],
+		"on_select": [
+			{
+				"_NAME_": "init",
+				"txn_id": "$.payload.context.transaction_id",
+				"_RETURN_": "txn_id are present",
+				"_SUCCESS_CODE_": 106
+			}
+		],
+		"init": [
+			{
+				"_NAME_": "on_init",
+				"txn_id": "$.payload.context.transaction_id",
+				"_RETURN_": "txn_id are present",
+				"_SUCCESS_CODE_": 107
+			}
+		],
+		"on_init": [
+			{
+				"_NAME_": "confirm",
+				"txn_id": "$.payload.context.transaction_id",
+				"_RETURN_": "txn_id are present",
+				"_SUCCESS_CODE_": 108
+			}
+		],
+		"confirm": [
+			{
+				"_NAME_": "on_confirm",
+				"txn_id": "$.payload.context.transaction_id",
+				"_RETURN_": "txn_id are present",
+				"_SUCCESS_CODE_": 109
+			}
 		]
 	},
 	"_SESSION_DATA_": {}
