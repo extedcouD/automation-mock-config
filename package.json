@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@types/node": "^22.10.4"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
