@@ -1,0 +1,6 @@
+message:
+  order_id: "077b248f"
+  cancellation_reason_id: "0"
+  descriptor:
+    name: "Ride Cancellation"
+    code: "CONFIRM_CANCEL"

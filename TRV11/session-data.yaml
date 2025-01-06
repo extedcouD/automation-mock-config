@@ -23,3 +23,4 @@ session_data:
   payments: []
   updated_payments: []
   order_id: null
+  status: null

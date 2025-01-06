@@ -1,0 +1,2 @@
+save-data:
+  cancellation_reason_id: "$.message.cancellation_reason_id"
