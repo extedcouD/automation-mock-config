@@ -46,5 +46,12 @@ export async function selectGenerator(existingPayload: any,sessionData: any){
     const chosen_items = getRandomItemsWithQuantities(items_min_max)
     existingPayload.message.order.items = chosen_items
     sessionData.items = chosen_items
+    const ids_with_quantities = {
+      items: existingPayload.message.order.items.reduce((acc: any, item: any) => {
+        acc[item.id] = item.quantity.selected.count;
+        return acc;
+      }, {})
+    };
+    sessionData["ids_with_quantities"] = ids_with_quantities
     return existingPayload;
 }

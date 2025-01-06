@@ -21,4 +21,5 @@ session_data:
   selected_item_ids: []
   billing: {}
   payments: []
+  updated_payments: []
   order_id: null
